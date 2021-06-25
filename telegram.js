@@ -12,12 +12,12 @@ const bot = new TelegramApi(token, { polling: true });
 app.use(express.json());
 app.post('/bot', (req, res) => {
   res.send(req.body);
-  const { name = '', email = '', pnone = '', msg = '' } = req.body;
-  console.log(`Имя: ${req.body.name} Телефон: ${req.body.pnone}`);
+  const { name = '', email = '', phone = '', msg = '' } = req.body;
+  console.log(`Имя: ${req.body.name} Телефон: ${req.body.phone}`);
   try {
     bot.sendMessage(
       chatId,
-      `От: ${name}\n${pnone ? 'Телефон: ' + pnone : ''}
+      `От: ${name}\n${phone ? 'Телефон: ' + phone : ''}
       ${email !== '' ? '\nEmail: ' + email : ''} 
       ${msg !== '' ? '\nВопрос: ' + msg : ''}`
     );
