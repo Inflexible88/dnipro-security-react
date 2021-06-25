@@ -1,5 +1,5 @@
 import React from 'react';
-import { Header, Slider, Services, About, Form, Adnvantages, Footer } from './components';
+import { Header, Slider, Services, About, UserForm, Adnvantages, Footer } from './components';
 
 function App() {
   return (
@@ -8,9 +8,14 @@ function App() {
       <Slider />
       <Services />
       <About />
-      <Form />
+      <UserForm />
       <Adnvantages />
-      <Footer addressText="Днiпро, вулиця Краснопільська, 12"/>
+      <Footer
+        phone="+38 (068) 975 12 12"
+        addressText="Днiпро, вулиця Краснопільська, 12"
+        title="Комплексные услуги охраны"
+        text="Комплексные услуги охраны . Комплексные услуги охраны . Комплексные услуги охраны..."
+      />
     </>
   );
 }

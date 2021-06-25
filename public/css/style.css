@@ -357,7 +357,7 @@ header{
 }
 .form__box-inner label{
   line-height: 36px;
-  color: #282828;
+  color: transparent;
   font-family: 'Roboto', sans-serif;
 }
 .form__box-inner input{

@@ -6,7 +6,7 @@ export { default as Services } from './Services';
 
 export { default as About } from './About';
 
-export { default as Form } from './Form';
+export { default as UserForm } from './UserForm';
 
 export { default as Adnvantages } from './Adnvantages';
 

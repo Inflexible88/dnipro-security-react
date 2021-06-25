@@ -1,23 +1,23 @@
 import React from 'react';
 
-function Footer({ addressText }) {
+const btnTitle = 'Бесплатная консультация';
+
+function Footer({ phone, addressText, title, text }) {
   return (
     <footer class="footer" id="footer">
       <div class="footer__content">
         <div class="container">
           <div class="footer__inner">
             <div class="footer__info">
-              <div class="footer__title">Комплексные услуги охраны</div>
-              <div class="footer__text">
-                Комплексные услуги охраны . Комплексные услуги охраны . Комплексные услуги охраны...
-              </div>
-              <a data-fancybox data-src="#modal" href="javascript:;" class="header__btn" href="#">
-                Бесплатная консультация
+              <div class="footer__title">{title}</div>
+              <div class="footer__text">{text}</div>
+              <a data-fancybox data-src="#modal" href="javascript:;" class="header__btn">
+                {btnTitle}
               </a>
               <ul class="footer__list">
                 <li>
-                  <a class="footer__phone" href="tel:380689751212">
-                    +38 (068) 975 12 12
+                  <a class="footer__phone" href={`tel:${phone.replace('/s/g', '')}`}>
+                    {phone}
                   </a>
                 </li>
                 <li>
@@ -28,7 +28,7 @@ function Footer({ addressText }) {
                     class="footer__adress"
                     href={`https://www.google.com.ua/maps/place/${addressText}`}
                     target="_blank">
-                    Днiпро, вулиця Краснопільська, 12
+                    {addressText}
                   </a>
                 </li>
               </ul>
