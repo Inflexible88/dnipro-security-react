@@ -1,28 +1,15 @@
 import React from 'react';
+import Advantage from './Advantage';
 
-function Adnvantages() {
+function Adnvantages({ details }) {
   return (
     <section class="advantages">
       <div class="container">
         <div class="advantages__inner">
-          <div class="advantages-item">
-            <div class="advantages__title">Наше преимущество №1</div>
-            <div class="advantages__text">
-              Мы умеем охранять, охранять, охранять, охранять, охранять, охранять, охранять
-            </div>
-          </div>
-          <div class="advantages-item">
-            <div class="advantages__title">Наше преимущество №2</div>
-            <div class="advantages__text">
-              Мы умеем охранять, охранять, охранять, охранять, охранять, охранять, охранять
-            </div>
-          </div>
-          <div class="advantages-item">
-            <div class="advantages__title">Наше преимущество №3</div>
-            <div class="advantages__text">
-              Мы умеем охранять, охранять, охранять, охранять, охранять, охранять, охранять
-            </div>
-          </div>
+          {details &&
+            details.map(({ title, text }) => {
+              return <Advantage title={title} text={text} />;
+            })}
         </div>
       </div>
     </section>

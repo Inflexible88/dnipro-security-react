@@ -4,7 +4,7 @@ import axios from 'axios';
 
 function UserForm() {
   return (
-    <section class="form">
+    <section class="form" id="form">
       <div class="container">
         <div class="form__inner">
           <div class="form__content">
@@ -18,8 +18,8 @@ function UserForm() {
                 onSubmit={({name, email, phone, msg}, actions) => {
                   axios.post('/bot', {name, email, phone, msg})
                 }}>
-                {(props) => (
-                  <Form action="http://localhost:3002/bot" method="POST">
+                {() => (
+                  <Form>
                     <div class="form__box-inner">
                       <div class="form__box-left">
                         <label for="name">

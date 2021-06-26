@@ -12,7 +12,7 @@ function Header() {
             <a class="header__email" href="mailto:tov.dniprobezpeka1@gmail.com">
               tov.dniprobezpeka1@gmail.com
             </a>
-            <a data-fancybox data-src="#modal" href="javascript:;" class="header__btn" href="#">
+            <a href="#form" class="header__btn">
               Бесплатная консультация
             </a>
           </div>

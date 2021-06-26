@@ -11,7 +11,7 @@ function Footer({ phone, addressText, title, text }) {
             <div class="footer__info">
               <div class="footer__title">{title}</div>
               <div class="footer__text">{text}</div>
-              <a data-fancybox data-src="#modal" href="javascript:;" class="header__btn">
+              <a href="#form" class="header__btn">
                 {btnTitle}
               </a>
               <ul class="footer__list">

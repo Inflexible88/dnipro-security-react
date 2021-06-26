@@ -9,6 +9,7 @@ export { default as About } from './About';
 export { default as UserForm } from './UserForm';
 
 export { default as Adnvantages } from './Adnvantages';
+export { default as Advantage } from './Advantage';
 
 export { default as Footer } from './Footer';
 
