@@ -9,13 +9,10 @@ const token = '1893426710:AAEfP3aWYYsSzrU6xLkQW7aeR4j7VflichU';
 
 const bot = new TelegramApi(token, { polling: true });
 
-if (process.env.NODE_ENV === 'production') {
-  app.use(express.static('client/build'));
-  const path = require('path');
-  app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
-  });
-}
+app.get('*', function (req, res) {
+  const index = path.join(__dirname, 'build', 'index.html');
+  res.sendFile(index);
+});
 
 app.use(express.json());
 app.post('/bot', (req, res) => {
