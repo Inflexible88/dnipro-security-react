@@ -27,6 +27,7 @@
   },
   "proxy": "https://dnipro-security.herokuapp.com",
   "scripts": {
+    "postinstall": "ng build",
     "start": "react-scripts start",
     "build": "CI=false && react-scripts build",
     "test": "react-scripts test",
