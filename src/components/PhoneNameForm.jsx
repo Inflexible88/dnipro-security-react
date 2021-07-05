@@ -17,7 +17,7 @@ function PhoneNameForm({ withSubmit, type }) {
           phone: Yup.string().required('Phone is required'),
         })}
         onSubmit={({ name, phone }) => {
-          axios.post('/bot', { name, phone, topic: 'order' });
+          axios.post('/bot', { name, phone, topic: type });
         }}>
         {({ errors, touched, validateField, validateForm }) => (
           <Form>

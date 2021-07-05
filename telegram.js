@@ -24,7 +24,7 @@ app.post('/bot', (req, res) => {
   try {
     bot.sendMessage(
       chatId,
-      `Тема: ${topic === '' ? 'Вопрос' : 'Заказ'} \nОт: ${name}${
+      `Тема: ${topic === '' ? 'Вопрос' : `Заказ - "${topic}"`} \nОт: ${name}${
         phone ? '\nТелефон: ' + phone : ''
       } ${email !== '' ? '\nEmail: ' + email : ''} ${msg !== '' ? '\nВопрос: ' + msg : ''}`,
     );
