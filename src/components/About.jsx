@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 function About() {
   return (
@@ -22,9 +21,6 @@ function About() {
             подразделений, которые ежедневно качественно выполняют поставленные задачи, тем самым
             выполняя стратегические цели «ДНИПРО-БЕЗПЕКА» в целом.
           </div>
-          <Link to="/" class="about__btn default-btn">
-            Узнать больше
-          </Link>
         </div>
       </div>
     </section>

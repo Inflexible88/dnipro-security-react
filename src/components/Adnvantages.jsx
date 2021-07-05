@@ -8,7 +8,7 @@ function Adnvantages({ details }) {
         <div class="advantages__inner">
           {details &&
             details.map(({ title, text }) => {
-              return <Advantage title={title} text={text} />;
+              return <Advantage key={title} title={title} text={text} />;
             })}
         </div>
       </div>

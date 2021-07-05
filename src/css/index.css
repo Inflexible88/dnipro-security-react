@@ -1,0 +1,10 @@
+@import './normalize.css';
+@import './fonts.css';
+@import './media.css';
+
+@import './jquery.fancybox.min.css';
+@import './jquery.formstyler.css';
+@import './slick.css';
+
+@import './modal.css';
+@import './style.css';

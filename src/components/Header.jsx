@@ -1,4 +1,6 @@
 import React from 'react';
+import logoPng from '../img/logo.png'
+
 
 function Header() {
   return (
@@ -22,8 +24,8 @@ function Header() {
         <div class="container">
           <div class="header__content-inner">
             <div class="header__logo">
-              <a href="#">
-                <img src="img/logo.png" alt="" />
+              <a href="/">
+                <img src={logoPng} alt="logo" />
               </a>
             </div>
             <nav class="menu">
@@ -32,7 +34,7 @@ function Header() {
               </div>
               <ul>
                 <li>
-                  <a href="#header">Главная</a>
+                  <a href="/">Главная</a>
                 </li>
                 <li>
                   <a href="#about">О компании</a>
