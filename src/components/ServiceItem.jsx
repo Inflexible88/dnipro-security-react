@@ -4,14 +4,11 @@ import Truncate from 'react-truncate';
 import { PhoneNameForm } from '../components';
 import closeIcon from '../img/close.svg';
 
-
 function ServiceItem({ icon, title, text, details }) {
   const [modalIsOpen, setIsOpen] = React.useState(false);
 
   const openModal = () => setIsOpen(true);
   const closeModal = () => setIsOpen(false);
-
-  const submit = () => {}
 
   return (
     <div class="services__item">
@@ -22,9 +19,9 @@ function ServiceItem({ icon, title, text, details }) {
           lines={7}
           children={details()}
           ellipsis={
-            <a className="show-more" onClick={openModal}>
+            <span className="show-more" onClick={openModal}>
               ...еще
-            </a>
+            </span>
           }>
           {}
         </Truncate>
@@ -40,7 +37,7 @@ function ServiceItem({ icon, title, text, details }) {
             <img className="modal__close" src={closeIcon} onClick={closeModal} alt="close"></img>
             <div className="modal__body">{details && details()}</div>
             <div className="modal__footer">
-              <PhoneNameForm withSubmit={true} type={title}/>
+              <PhoneNameForm withSubmit={true} type={title} />
             </div>
           </div>
         </Modal>

@@ -1,18 +1,17 @@
 import React from 'react';
-import logoPng from '../img/logo.png'
+import logoPng from '../img/logo.png';
 
-
-function Header() {
+function Header({ menuItems, phone, email }) {
   return (
     <header class="header" id="header">
       <div class="header__top">
         <div class="container">
           <div class="header__contacts">
-            <a class="header__phone" href="tel:380689751212">
-              +38 (068) 975 12 12
+            <a class="header__phone" href={`tel:${phone.replace('/s/g', '')}`}>
+              {phone}
             </a>
-            <a class="header__email" href="mailto:tov.dniprobezpeka1@gmail.com">
-              tov.dniprobezpeka1@gmail.com
+            <a class="header__email" href={`mailto:${email}`}>
+              {email}
             </a>
             <a href="#form" class="header__btn">
               Бесплатная консультация
@@ -33,18 +32,12 @@ function Header() {
                 <span class="icon-bars"></span>
               </div>
               <ul>
-                <li>
-                  <a href="/">Главная</a>
-                </li>
-                <li>
-                  <a href="#about">О компании</a>
-                </li>
-                <li>
-                  <a href="#services">Услуги</a>
-                </li>
-                <li>
-                  <a href="#footer">Контакты</a>
-                </li>
+                {menuItems &&
+                  Object.entries(menuItems).map(([key, value]) => (
+                    <li>
+                      <a href={key}>{value}</a>
+                    </li>
+                  ))}
               </ul>
             </nav>
           </div>

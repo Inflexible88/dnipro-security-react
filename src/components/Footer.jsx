@@ -2,7 +2,7 @@ import React from 'react';
 
 const btnTitle = 'Бесплатная консультация';
 
-function Footer({ phone, addressText, title, text }) {
+function Footer({ phone, email, addressText, title, text }) {
   return (
     <footer class="footer" id="footer">
       <div class="footer__content">
@@ -21,7 +21,7 @@ function Footer({ phone, addressText, title, text }) {
                   </a>
                 </li>
                 <li>
-                  <a href="mailto:tov.dniprobezpeka1@gmail.com">tov.dniprobezpeka1@gmail.com</a>
+                  <a href={`mailto:${email}`}>{email}</a>
                 </li>
                 <li>
                   <span

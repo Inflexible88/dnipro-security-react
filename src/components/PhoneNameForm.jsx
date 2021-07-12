@@ -40,7 +40,7 @@ function PhoneNameForm({ withSubmit, type }) {
                 <button
                   class="default-btn"
                   type="submit"
-                  onClick={() => validateForm().then(() => console.log('blah'))}>
+                  onClick={() => validateForm()}>
                   Заказать
                 </button>
               )}
