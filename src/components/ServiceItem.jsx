@@ -4,7 +4,7 @@ import Truncate from 'react-truncate';
 import { PhoneNameForm } from '../components';
 import closeIcon from '../img/close.svg';
 
-function ServiceItem({ icon, title, text, details }) {
+function ServiceItem({ icon, title, subtitle, details }) {
   const [modalIsOpen, setIsOpen] = React.useState(false);
 
   const openModal = () => setIsOpen(true);
@@ -35,7 +35,7 @@ function ServiceItem({ icon, title, text, details }) {
           overlayClassName="Overlay">
           <div class="modal__wrapper">
             <img className="modal__close" src={closeIcon} onClick={closeModal} alt="close"></img>
-            <div className="modal__body">{details && details()}</div>
+            <div className="modal__body">{details && <>{<div><h1>{subtitle}</h1></div>}{details()}</>}</div>
             <div className="modal__footer">
               <PhoneNameForm withSubmit={true} type={title} />
             </div>

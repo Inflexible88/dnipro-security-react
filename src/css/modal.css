@@ -47,7 +47,7 @@
 .modal__body h1 {
   line-height: 30px;
   text-align:center ;
-  padding: 20px;
+  padding-top: 20px;
 }
 
 .modal__body li {
@@ -60,7 +60,7 @@
 }
 
 .modal__body li:first-child {
-  padding-top: 50px;
+  padding-top: .5%;
 }
 
 .modal__body li:hover {
