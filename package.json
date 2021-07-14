@@ -20,7 +20,7 @@
     "react-truncate": "^2.4.0",
     "yup": "^0.32.9"
   },
-  "proxy": "https://dnipro-security.herokuapp.com",
+
   "scripts": {
     "start": "react-scripts start",
     "build": "CI=false && react-scripts build",
