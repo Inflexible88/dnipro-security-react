@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+var router = express.Router();
 const TelegramApi = require('node-telegram-bot-api');
 
 const app = express();
@@ -33,9 +34,7 @@ app.post('/bot', (req, res) => {
   }
 });
 
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname+'/client/build/index.html'));
-});
+router.get('/', (req, res) => { res.render('index') });
 
 app.listen(PORT, () => {
   console.log(`Example app listening at http://localhost:${PORT}`);
