@@ -16,7 +16,7 @@ function ServiceItem({ icon, title, subtitle, details }) {
       <div class="services__item-title">{title}</div>
       <div class="services__item-text">
         <Truncate
-          lines={7}
+          lines={8}
           children={details()}
           ellipsis={
             <span className="show-more" onClick={openModal}>
