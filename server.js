@@ -19,7 +19,7 @@ app.use(express.static('build'))
 
 
 app.post('/bot', (req, res) => {
-  // res.send(req.body);
+  res.send(req.body);
   const { topic = '', name = '', email = '', phone = '', msg = '' } = req.body;
 
   console.log(`Имя: ${req.body.name} Телефон: ${req.body.phone}`);
