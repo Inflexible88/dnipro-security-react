@@ -3,27 +3,28 @@ const path = require('path');
 const TelegramApi = require('node-telegram-bot-api');
 
 const app = express();
-const PORT = process.env.PORT || 3002;
+const PORT = process.env.PORT || 3001;
 const chatId = -1001582516206;
 const token = '1893426710:AAEfP3aWYYsSzrU6xLkQW7aeR4j7VflichU';
 const bot = new TelegramApi(token, { polling: true });
 
-// app.set('port', PORT);
-// app.use(express.json());
-// app.use(express.static(path.join(__dirname + '/public')));
-
 app.use(express.static('build'))
-// app.use(express.static(path.resolve(__dirname, 'build')))
+app.use(express.json());
 
-
-
+app.get('/',  (req, res) => {
+  const index = path.resolve(__dirname, 'build', 'index.html');
+  res.sendFile(index);
+});
 
 app.post('/bot', (req, res) => {
-  res.send(req.body);
-  const { topic = '', name = '', email = '', phone = '', msg = '' } = req.body;
-
-  console.log(`Имя: ${req.body.name} Телефон: ${req.body.phone}`);
   try {
+    const { topic = '', name = '', email = '', phone = '', msg = '' } = req.body;
+    // console.log(`Имя: ${req.body.name} Телефон: ${req.body.phone}`);
+    // const topic = 'Охрана' 
+    // const name = 'Алексей' 
+    // const email = 'dsdf@mail.ru' 
+    // const phone = '9645654654' 
+    // const msg = 'sdfsdfds'
     bot.sendMessage(
       chatId,
       `Тема: ${topic === '' ? 'Вопрос' : `Заказ - "${topic}"`} \nОт: ${name}${
@@ -32,13 +33,11 @@ app.post('/bot', (req, res) => {
     );
   } catch (e) {
     console.log(`Что-то пошло не так. Телеграмм бот приказал долго жить...`);
-  }
+  } finally {res.send(req.body);}
+  
 });
 
-app.get('*',  (req, res) => {
-  const index = path.resolve(__dirname, 'build', 'index.html');
-  res.sendFile(index);
-});
+
 
 
 app.listen(PORT, () => {
