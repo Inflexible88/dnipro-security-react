@@ -16,8 +16,13 @@ app.use(express.static('build'))
 // app.use(express.static(path.resolve(__dirname, 'build')))
 
 
+app.get('*',  (req, res) => {
+  const index = path.resolve(__dirname, 'build', 'index.html');
+  res.sendFile(index);
+});
+
 app.post('/bot', (req, res) => {
-  res.send(req.body);
+  // res.send(req.body);
   const { topic = '', name = '', email = '', phone = '', msg = '' } = req.body;
 
   console.log(`Имя: ${req.body.name} Телефон: ${req.body.phone}`);
@@ -33,11 +38,7 @@ app.post('/bot', (req, res) => {
   }
 });
 
-app.get('*',  (req, res) => {
-  // const index = path.join(__dirname, 'build', 'index.html');
-  const index = path.resolve(__dirname, 'build', 'index.html');
-  res.sendFile(index);
-});
+
 
 
 app.listen(PORT, () => {
