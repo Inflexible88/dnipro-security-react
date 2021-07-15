@@ -141,27 +141,6 @@
   }
 }
 
-@media (max-width: 540px) {
-  .news__slider {
-    padding: 50px 15px 25px 25px;
-  }
-  .news__slider:before {
-    left: 25px;
-  }
-  .news__slider-inner .slick-next {
-    right: -20px;
-  }
-  .news__slider-inner .slick-prev {
-    right: 35px;
-  }
-  .news__images {
-    float: none;
-  }
-  .news__slider-inner .slick-btn {
-    bottom: -90px;
-  }
-}
-
 @media (max-width: 414px) {
   .modal__body h1 {
     font-size: 18px;

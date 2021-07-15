@@ -11,10 +11,10 @@ function ServiceItem({ icon, title, subtitle, details }) {
   const closeModal = () => setIsOpen(false);
 
   return (
-    <div class="services__item">
-      <img src={icon} alt="" />
-      <div class="services__item-title">{title}</div>
-      <div class="services__item-text">
+    <div className="services__item">
+      <img width="57" height="54" src={icon} alt="" />
+      <div className="services__item-title">{title}</div>
+      <div className="services__item-text">
         <Truncate
           lines={8}
           children={details()}
@@ -26,14 +26,14 @@ function ServiceItem({ icon, title, subtitle, details }) {
           {}
         </Truncate>
       </div>
-      <div class="services__item-btn">
+      <div className="services__item-btn">
         <Modal
           closeTimeoutMS={200}
           isOpen={modalIsOpen}
           onRequestClose={closeModal}
           className="Modal"
           overlayClassName="Overlay">
-          <div class="modal__wrapper">
+          <div className="modal__wrapper">
             <img className="modal__close" src={closeIcon} onClick={closeModal} alt="close"></img>
             <div className="modal__body">{details && <>{<div><h1>{subtitle}</h1></div>}{details()}</>}</div>
             <div className="modal__footer">
@@ -41,7 +41,7 @@ function ServiceItem({ icon, title, subtitle, details }) {
             </div>
           </div>
         </Modal>
-        <button class="default-btn" onClick={() => openModal()}>
+        <button className="default-btn" onClick={() => openModal()}>
           Заказать
         </button>
       </div>

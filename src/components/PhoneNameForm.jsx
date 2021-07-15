@@ -9,7 +9,7 @@ function PhoneNameForm({ withSubmit, type }) {
   window.withSubmit = withSubmit;
 
   return (
-    <section class="form" id="form">
+    <section className="form" id="form">
       <Formik
         initialValues={{ name: '', phone: '' }}
         validationSchema={Yup.object().shape({
@@ -38,7 +38,7 @@ function PhoneNameForm({ withSubmit, type }) {
               />
               {withSubmit && (
                 <button
-                  class="default-btn"
+                className="default-btn"
                   type="submit"
                   onClick={() => validateForm()}>
                   Заказать

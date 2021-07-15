@@ -2,11 +2,11 @@ import React from 'react';
 
 function About() {
   return (
-    <section class="about" id="about">
-      <div class="container">
-        <div class="about__inner">
-          <div class="about__title">О компании</div>
-          <div class="about__text">
+    <section className="about" id="about">
+      <div className="container">
+        <div className="about__inner">
+          <div className="about__title">О компании</div>
+          <div className="about__text">
             «ДНИПРО-БЕЗПЕКА» динамично развивающихся охранных предприятий, созданных с целью
             обеспечения личной безопасности граждан, сохранности их собственности, обеспечение
             правопорядка на территориях предприятий, учреждений, организаций, а также во время

@@ -3,33 +3,33 @@ import logoPng from '../img/logo.png';
 
 function Header({ menuItems, phone, email }) {
   return (
-    <header class="header" id="header">
-      <div class="header__top">
-        <div class="container">
-          <div class="header__contacts">
-            <a class="header__phone" href={`tel:${phone.replace('/s/g', '')}`}>
+    <header className="header" id="header">
+      <div className="header__top">
+        <div className="container">
+          <div className="header__contacts">
+            <a className="header__phone" href={`tel:${phone.replace('/s/g', '')}`}>
               {phone}
             </a>
-            <a class="header__email" href={`mailto:${email}`}>
+            <a className="header__email" href={`mailto:${email}`}>
               {email}
             </a>
-            <a href="#form" class="header__btn">
+            <a href="#form" className="header__btn">
               Бесплатная консультация
             </a>
           </div>
         </div>
       </div>
-      <div class="header__content">
-        <div class="container">
-          <div class="header__content-inner">
-            <div class="header__logo">
+      <div className="header__content">
+        <div className="container">
+          <div className="header__content-inner">
+            <div className="header__logo">
               <a href="/">
-                <img src={logoPng} alt="logo" />
+                <img width="145" height="23" src={logoPng} alt="logo" />
               </a>
             </div>
-            <nav class="menu">
-              <div class="header__btn-menu">
-                <span class="icon-bars"></span>
+            <nav className="menu">
+              <div className="header__btn-menu">
+                <span className="icon-bars"></span>
               </div>
               <ul>
                 {menuItems &&

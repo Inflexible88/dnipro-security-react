@@ -19,12 +19,6 @@ app.get('/',  (req, res) => {
 app.post('/bot', (req, res) => {
   try {
     const { topic = '', name = '', email = '', phone = '', msg = '' } = req.body;
-    // console.log(`Имя: ${req.body.name} Телефон: ${req.body.phone}`);
-    // const topic = 'Охрана' 
-    // const name = 'Алексей' 
-    // const email = 'dsdf@mail.ru' 
-    // const phone = '9645654654' 
-    // const msg = 'sdfsdfds'
     bot.sendMessage(
       chatId,
       `Тема: ${topic === '' ? 'Вопрос' : `Заказ - "${topic}"`} \nОт: ${name}${
@@ -32,14 +26,8 @@ app.post('/bot', (req, res) => {
       } ${email !== '' ? '\nEmail: ' + email : ''} ${msg !== '' ? '\nВопрос: ' + msg : ''}`,
     );
   } catch (e) {
-    console.log(`Что-то пошло не так. Телеграмм бот приказал долго жить...`);
+    throw new Error(`Что-то пошло не так. Телеграмм бот приказал долго жить...`)
   } finally {res.send(req.body);}
-  
 });
 
-
-
-
-app.listen(PORT, () => {
-  console.log(`Example app listening at http://localhost:${PORT}`);
-});
+app.listen(PORT);

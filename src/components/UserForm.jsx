@@ -4,15 +4,15 @@ import axios from 'axios';
 
 function UserForm() {
   return (
-    <section class="form" id="form">
-      <div class="container">
-        <div class="form__inner">
-          <div class="form__content">
-            <div class="form__title-box">
-              <div class="form__title">Получить Консультацию</div>
-              <div class="form__text">Комплексный подход к обеспечению безопасности</div>
+    <section className="form" id="form">
+      <div className="container">
+        <div className="form__inner">
+          <div className="form__content">
+            <div className="form__title-box">
+              <div className="form__title">Получить Консультацию</div>
+              <div className="form__text">Комплексный подход к обеспечению безопасности</div>
             </div>
-            <div class="form__box">
+            <div className="form__box">
               <Formik
                 initialValues={{ name: '' }}
                 onSubmit={({name, email, phone, msg}, actions) => {
@@ -20,8 +20,8 @@ function UserForm() {
                 }}>
                 {() => (
                   <Form>
-                    <div class="form__box-inner">
-                      <div class="form__box-left">
+                    <div className="form__box-inner">
+                      <div className="form__box-left">
                         <label for="name">
                           Имя
                           <Field type="text" name="name" placeholder="Введите Ваше имя" />
@@ -35,12 +35,12 @@ function UserForm() {
                           <Field type="email" name="email" placeholder="Введите Ваш имейл" />
                         </label>                      
                       </div>
-                      <div class="form__box-right">
+                      <div className="form__box-right">
                         <label for="msg">
                           Сообщение
                           <Field type="tel" name="msg" placeholder="Введите Ваш вопрос" component="textarea" />
                         </label>
-                        <button class="default-btn" type="submit">
+                        <button className="default-btn" type="submit">
                           Получить консультацию
                         </button>
                       </div>
