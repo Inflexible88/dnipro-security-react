@@ -16,10 +16,7 @@ app.use(express.static('build'))
 // app.use(express.static(path.resolve(__dirname, 'build')))
 
 
-app.get('*',  (req, res) => {
-  const index = path.resolve(__dirname, 'build', 'index.html');
-  res.sendFile(index);
-});
+
 
 app.post('/bot', (req, res) => {
   // res.send(req.body);
@@ -38,7 +35,10 @@ app.post('/bot', (req, res) => {
   }
 });
 
-
+app.get('*',  (req, res) => {
+  const index = path.resolve(__dirname, 'build', 'index.html');
+  res.sendFile(index);
+});
 
 
 app.listen(PORT, () => {
