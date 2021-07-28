@@ -2,12 +2,12 @@ import React from 'react';
 import { Field, Form, Formik } from 'formik';
 import { validateUsername, validatePhoneNumber } from '../utils/validation';
 import * as Yup from 'yup';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import axios from 'axios';
 
-function PhoneNameForm({ withSubmit, type }) {
-  window.withSubmit = withSubmit;
-
+function PhoneNameForm({ withSubmit, type, afterAction }) {
   return (
     <section className="form" id="form">
       <Formik
@@ -17,7 +17,20 @@ function PhoneNameForm({ withSubmit, type }) {
           phone: Yup.string().required('Phone is required'),
         })}
         onSubmit={({ name, phone }) => {
-          axios.post('/bot', { name, phone, topic: type });
+          axios
+            .post('/bot', { name, phone, topic: type })
+            .then(() => {
+              toast.dark('Запрос отправлен!', {
+                position: 'top-right',
+                autoClose: 5000,
+                hideProgressBar: true,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+              });
+            })
+            .then(() => afterAction());
         }}>
         {({ errors, touched, validateField, validateForm }) => (
           <Form>
@@ -37,10 +50,7 @@ function PhoneNameForm({ withSubmit, type }) {
                 className={errors.phone && touched.phone ? 'is-invalid' : ''}
               />
               {withSubmit && (
-                <button
-                className="default-btn"
-                  type="submit"
-                  onClick={() => validateForm()}>
+                <button className="default-btn" type="submit" onClick={() => validateForm()}>
                   Заказать
                 </button>
               )}

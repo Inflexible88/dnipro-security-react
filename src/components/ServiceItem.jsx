@@ -37,7 +37,7 @@ function ServiceItem({ icon, title, subtitle, details }) {
             <img className="modal__close" src={closeIcon} onClick={closeModal} alt="close"></img>
             <div className="modal__body">{details && <>{<div><h1>{subtitle}</h1></div>}{details()}</>}</div>
             <div className="modal__footer">
-              <PhoneNameForm withSubmit={true} type={title} />
+              <PhoneNameForm withSubmit={true} type={title} afterAction={closeModal}/>
             </div>
           </div>
         </Modal>
